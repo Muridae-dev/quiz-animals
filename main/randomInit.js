@@ -8,7 +8,7 @@ var audio;
 
 function randomInit() {
   textBoxManipulatorRemover();
-  randomQuestion = Math.floor(Math.random() * 6);
+  randomQuestion = 1; // Math.floor(Math.random() * 6);
   if (randomQuestion == 0 && pictureArray.length != 0) initDragnDrop();
   else if (randomQuestion == 1 && quiz.length != 0) initSabimango();
   else if (randomQuestion == 2 && makeGlasses.length != 0) initDressup();
