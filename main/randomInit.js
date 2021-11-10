@@ -30,15 +30,15 @@ function randomInit() {
 }
 
 function correctAnswer() {
-  funText.innerHTML = "CORRECT ANSWER!";
+  funText.innerHTML = 'CORRECT ANSWER!';
   score++;
-  document.getElementById("scoreBox").innerHTML = "SCORE:" + score;
+  document.getElementById('scoreBox').innerHTML = 'SCORE:' + score;
   textBoxManipulator();
   setTimeout(randomInit, 1500);
 }
 
 function wrongAnswer() {
-  funText.innerHTML = "WRONG ANSWER!";
+  funText.innerHTML = 'WRONG ANSWER!';
   textBoxManipulator();
   setTimeout(randomInit, 1500);
 }
@@ -48,28 +48,28 @@ function textBoxManipulator() {
   var randomizer2 = Math.floor(Math.random() * 2);
   var randomizer3 = Math.floor(Math.random() * 2);
 
-  textBox.style.display = "none";
-  containerBox.style.display = "none";
-  funBox.style.display = "";
+  textBox.style.display = 'none';
+  containerBox.style.display = 'none';
+  funBox.style.display = '';
 
   if (randomizer1 == 0) {
     colorChange();
     jsTimer = setInterval(colorChange, 100);
   }
 
-  if (randomizer2 == 0) funText.classList.add("activeText");
-  if (randomizer3 == 0) funBox.classList.add("active");
+  if (randomizer2 == 0) funText.classList.add('activeText');
+  if (randomizer3 == 0) funBox.classList.add('active');
 }
 
 function textBoxManipulatorRemover() {
-  textBox.style.display = "";
-  containerBox.style.display = "";
-  funBox.style.display = "none";
+  textBox.style.display = '';
+  containerBox.style.display = '';
+  funBox.style.display = 'none';
 
   clearTimeout(jsTimer);
-  $(".funText").css({ animation: "" });
-  funText.classList.remove("activeText");
-  funBox.classList.remove("active");
+  $('.funText').css({ animation: '' });
+  funText.classList.remove('activeText');
+  funBox.classList.remove('active');
 }
 
 function colorChange() {
@@ -77,19 +77,19 @@ function colorChange() {
   var b = Math.round(Math.random() * 255);
   var g = Math.round(Math.random() * 255);
 
-  $(".funBox").css({ color: `rgb(${r},${b},${g} )` });
+  $('.funBox').css({ color: `rgb(${r},${b},${g} )` });
 }
 
 function firstInit() {
-  audio = new Audio("sounds/shopchannel.mp3");
+  audio = new Audio('sounds/shopchannel.mp3');
   audio.play();
-  document.getElementsByTagName("body")[0].innerHTML =
+  document.getElementsByTagName('body')[0].innerHTML =
     '    <div id="scoreBox">        SCORE:0    </div>    <div class="funBox">        <div class="funText">asdasdasdas</div>    </div>    <div id="textBox">                </div>    <div id="containerBox">            </div>';
-  funBox = document.querySelector(".funBox");
-  funText = document.querySelector(".funText");
+  funBox = document.querySelector('.funBox');
+  funText = document.querySelector('.funText');
   jsTimer;
-  containerBox = document.getElementById("containerBox");
-  textBox = document.getElementById("textBox");
+  containerBox = document.getElementById('containerBox');
+  textBox = document.getElementById('textBox');
   textBoxManipulatorRemover();
   randomInit();
 }
