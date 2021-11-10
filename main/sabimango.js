@@ -83,7 +83,7 @@ function changeQuestion() {
   var rectBox = textBox.getBoundingClientRect();
   var questionBox = document.getElementById('question');
   console.log(rectBox.height);
-  questionBox.style.top = rectBox.bottom + 50 + 'px';
+  questionBox.style.top = rectBox.bottom + 'px';
   questionBox.style.left = rectBox.left + rectBox.width / 2 + 'px';
 }
 
