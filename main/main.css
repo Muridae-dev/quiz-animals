@@ -30,7 +30,7 @@ body {
   top: 10%;
   left: 50%;
   height: auto;
-  width: 40%;
+  width: 100%;
   transform: translate(-50%, 0);
   z-index: 99;
   text-align: center;
@@ -54,7 +54,7 @@ body {
 }
 
 label {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 /* input[type='radio'] {
   border: 0px;
