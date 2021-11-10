@@ -5,8 +5,15 @@ const makeGlasses = [
     imgURL: ["images/0glass2.png", "images/0glass1.png", "images/0glass3.png"],
     charaURL: "images/0frog.png",
     answer: "glasses2", 
-    question: "Pick the coolest shades"
-  }
+    question: "Help the frog pick the coolest shades!"
+  },
+
+ {
+   imgURL: ["images/quote1.png", "images/quote2.png", "images/quote3.png"],
+   charaURL: "images/megan.png",
+   answer: "quote2",
+   question: "Which quote belongs to Megan Thee Stallion?"
+ }
 ];
 
 function displayGlasses() {
