@@ -33,6 +33,8 @@ var url2 = url.split("?");
 var url3 = url2[1].split("=");
 var score = url3[1];
 
+document.getElementById("scoreP").innerHTML = "YOUR SCORE IS: " + score;
+
 //ADD TO FIREBASE
 async function postScore() {
     var name = readInput("name");

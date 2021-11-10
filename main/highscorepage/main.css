@@ -1,0 +1,26 @@
+html,body {
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+#containerBox {
+    height:100%;
+    width:100%;
+}
+
+#inputContainer {
+    height:10%;
+    width:100%;
+    text-align:center;
+
+    position:relative;
+    top:10%;
+    left:0;
+}
+
+input {
+    height:50%;
+    width:50%;
+    font-size:40px;
+}
