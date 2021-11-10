@@ -1,4 +1,3 @@
-const containerBox = document.getElementById('containerBox');
 
 let score = 0;
 let currentQuiz = 0;
