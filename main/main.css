@@ -1,0 +1,92 @@
+html, body {
+    height:100%;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+}
+
+#containerBox {
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+}
+
+#question {
+    height:50%;
+    width:auto;
+    position:absolute;
+    transform:translate(-50%,0);
+    
+}
+
+
+#textBox {
+    position:absolute;
+    top:10%;
+    left:50%;
+    height:auto;
+    width:40%;
+    transform: translate(-50%,0);
+    z-index: 99;
+    text-align: center;
+    font-size:40px;
+    background:blue;
+    color:white;
+}
+
+.funBox {
+    height:10%;
+    width:100%;
+    text-align: center;
+    font-size:40px;
+    color:aqua;
+
+    position:absolute;
+    top:50%;
+    left:0%;
+    z-index: 300;
+    transform: scale(2);
+    
+}
+
+.active {
+    animation: reScaler 0.5s alternate 0s infinite;
+
+}
+
+.activeText {
+    animation: shaker 1s linear 0s infinite;
+}
+
+.animalImage {
+    height: 25%;
+    width: 25%;
+    position:absolute;
+}
+
+/*_______________________ANIMATIONS______________________*/
+
+@keyframes reScaler {
+    from {
+        transform:scale(2);
+    }    
+    to {
+        transform: scale(5);
+    }
+}
+
+@keyframes shaker {
+    0% {
+        transform:rotate(30deg);
+    }
+
+    50% {
+        transform:rotate(-30deg);
+    }
+
+    100% {
+        transform:rotate(30deg);
+    }
+}

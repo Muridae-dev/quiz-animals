@@ -1,0 +1,60 @@
+#background {
+  position: absolute;
+  margin: auto;
+  width: 350px;
+  height: 350px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: purple;
+}
+
+#character {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 350px;
+  height: 350px;
+}
+
+#buttonContainer {
+  height:20%;
+  width:100%;
+  text-align:center;
+
+  position:absolute;
+  top:20%;
+  left:0;
+
+}
+
+/* GLASSES STYLE */
+#glasses-variants {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-left: 100%;
+  display: flex;
+  transition: all 2000ms;
+}
+
+#glasses1 {
+  top: 0%;
+  width: 350px;
+  height: 350px;
+}
+
+#glasses2 {
+  width: 350px;
+  height: 350px;
+}
+
+#glasses3 {
+  width: 350px;
+  height: 350px;
+}
+
+#results {
+    color: white;
+    
+}
