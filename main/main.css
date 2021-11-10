@@ -66,6 +66,10 @@ html, body {
     position:absolute;
 }
 
+#sharkImage {
+    height: 400px;
+}
+
 /*_______________________ANIMATIONS______________________*/
 
 @keyframes reScaler {
