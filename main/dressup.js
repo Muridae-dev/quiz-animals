@@ -2,15 +2,17 @@ let currentActive = 0;
 const glassPos = [0, 100, 200, 300];
 const makeGlasses = [
   {
-    imgURL: ["images/0glass1.png", "images/0glass2.png", "images/0glass3.png"],
+    imgURL: ["images/0glass2.png", "images/0glass1.png", "images/0glass3.png"],
     charaURL: "images/0frog.png",
-    answer: "glasses2",
+    answer: "glasses2", 
+    question: "Pick the coolest shades"
   }
 ];
 
 function displayGlasses() {
   randomPicker = random(makeGlasses);
-  var content = '<div id="buttonContainer">      <input        type="button"        value="button1"        id="nextglasses" onclick="nextGlasses()"/>      <button id="submit" onclick="checkDressupAnswer()">Submit Answer</button>    </div>      <div id="background">        <div id="character" />        <div id="glasses-variants">          <div id="glasses1"></div>          <div id="glasses2"></div>          <div id="glasses3"></div>        </div>        <div id="shoes" />        <div id="extra" />      </div>';
+  textBox.innerHTML= makeGlasses[randomPicker].question
+  var content = '<div id="buttonContainer">      <input        type="button"        value="Select Next"        id="nextglasses" onclick="nextGlasses()"/>      <button id="submit" onclick="checkDressupAnswer()">Submit Answer</button>    </div>      <div id="background">        <div id="character" />        <div id="glasses-variants">          <div id="glasses1"></div>          <div id="glasses2"></div>          <div id="glasses3"></div>        </div>        <div id="shoes" />        <div id="extra" />      </div>';
   containerBox.innerHTML = content;
   for (let i = 1; i <= 3; i++) {
     document.getElementById("glasses" + i).style.background = `url(${makeGlasses[randomPicker].imgURL[i - 1]})`;
