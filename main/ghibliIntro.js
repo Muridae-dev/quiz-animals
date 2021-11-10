@@ -79,6 +79,7 @@ function createCards(imgArray) {
 function initGhibli() {
   //quizTitle.innerHTML = 'Ghibli Intro QUIZ';
   containerBox.innerHTML = '';
+  audio.pause();
 
   textBox.innerHTML = 'Which Ghibli movie is this song from?';
   randomPicker = random(ghibliSound);
@@ -106,6 +107,7 @@ function onClick(evt) {
     } else {
       wrongAnswer();
     }
+    audio.play();
     currentQuestion++;
     ghibliSound.splice(randomPicker, 1);
     console.log('gibliSound is ', ghibliSound);

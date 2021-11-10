@@ -3,6 +3,7 @@ var funText;
 var jsTimer;
 var containerBox;
 var textBox;
+var audio;
 
 function randomInit() {
   textBoxManipulatorRemover();
@@ -80,7 +81,7 @@ function colorChange() {
 }
 
 function firstInit() {
-  var audio = new Audio('sounds/shopchannel.mp3');
+  audio = new Audio('sounds/shopchannel.mp3');
   audio.play();
   document.getElementsByTagName('body')[0].innerHTML =
     '    <div id="scoreBox">        SCORE:0    </div>    <div class="funBox">        <div class="funText">asdasdasdas</div>    </div>    <div id="textBox">                </div>    <div id="containerBox">            </div>';
