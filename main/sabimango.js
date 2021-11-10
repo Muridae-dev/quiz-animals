@@ -44,7 +44,6 @@ function initSabimango() {
   k4 = document.getElementById("k4");
   labelBox = document.getElementsByTagName("label");
   changeQuestion();
-
 }
 
 function checkMangoAnswer() {
@@ -60,38 +59,34 @@ function checkMangoAnswer() {
   quiz.splice(randomPicker, 1);
 }
 
-
-
-
 function changeQuestion() {
   //MAKE THE CONTAINER DIV DISPLAY INLINE
   //containerBox.style.display = "";
   randomPicker = random(quiz);
-  textBox.innerHTML =  quiz[randomPicker].fraga;
-  if(quiz[randomPicker].img) document.getElementById("imgBox").innerHTML = quiz[randomPicker].img;
-    k4.style.display = "none";
-    k5.style.display = "none";
-    if (quiz[randomPicker].nrQ == 5) {
-          k4.style.display = "inline";
-          k5.style.display = "inline";
-    }
-      for (let i = 0; i < quiz[randomPicker].nrQ; i++) {
-        labelBox[i].innerHTML = quiz[randomPicker].svar[i];
-      }
+  textBox.innerHTML = quiz[randomPicker].fraga;
+  if (quiz[randomPicker].img)
+    document.getElementById('imgBox').innerHTML = quiz[randomPicker].img;
+  k4.style.display = 'none';
+  k5.style.display = 'none';
+  if (quiz[randomPicker].nrQ == 5) {
+    k4.style.display = 'inline';
+    k5.style.display = 'inline';
+  }
+  for (let i = 0; i < quiz[randomPicker].nrQ; i++) {
+    labelBox[i].innerHTML = quiz[randomPicker].svar[i];
+  }
 
-    $("input[name=fraga1]").prop("checked", false);
+  $('input[name=fraga1]').prop('checked', false);
 
-    rightAnswer = document.getElementById(quiz[randomPicker].answer);
+  rightAnswer = document.getElementById(quiz[randomPicker].answer);
 
-    var rectBox = textBox.getBoundingClientRect();
-    var questionBox = document.getElementById("question");
-    console.log(rectBox.height);
-    questionBox.style.top = (rectBox.bottom + 50) + 'px';
-    questionBox.style.left = (rectBox.left + (rectBox.width/2)) + 'px';
+  var rectBox = textBox.getBoundingClientRect();
+  var questionBox = document.getElementById('question');
+  console.log(rectBox.height);
+  questionBox.style.top = rectBox.bottom + 50 + 'px';
+  questionBox.style.left = rectBox.left + rectBox.width / 2 + 'px';
 }
 
-
-
-function titleToggle(){
+function titleToggle() {
   spotlightTitle.classList.toggle(`active`);
 }
