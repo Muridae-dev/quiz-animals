@@ -77,11 +77,13 @@ function createCards(imgArray) {
 }
 
 function initGhibli() {
-  //quizTitle.innerHTML = 'Ghibli Intro QUIZ';
+  document.body.style.background = '#1a011c';
+
   containerBox.innerHTML = '';
   audio.pause();
 
   textBox.innerHTML = 'Which Ghibli movie is this song from?';
+
   randomPicker = random(ghibliSound);
   console.log('ghibli random is ', randomPicker);
   containerBox.innerHTML = `<audio style="z-index: 99;" id="audioControls" controls><source src="${ghibliSound[randomPicker].src}" type="audio/wav"></audio>`;
@@ -111,6 +113,7 @@ function onClick(evt) {
     currentQuestion++;
     ghibliSound.splice(randomPicker, 1);
     console.log('gibliSound is ', ghibliSound);
+    document.body.style.background = null;
   }
   if (evt.target.alt === 'SilhouetteImage') {
     if (

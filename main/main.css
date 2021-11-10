@@ -1,92 +1,189 @@
-html, body {
-    height:100%;
-    padding:0;
-    margin:0;
-    overflow:hidden;
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Mochiy+Pop+One&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
 
 #containerBox {
-    position: absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
+  position: absolute;
+  margin-top: 50px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 #question {
-    height:50%;
-    width:auto;
-    position:absolute;
-    transform:translate(-50%,0);
-    
+  height: 50%;
+  width: auto;
+  position: absolute;
+  transform: translate(-50%, 0);
 }
 
-
 #textBox {
-    position:absolute;
-    top:10%;
-    left:50%;
-    height:auto;
-    width:40%;
-    transform: translate(-50%,0);
-    z-index: 99;
-    text-align: center;
-    font-size:40px;
-    background:blue;
-    color:white;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  height: auto;
+  width: 40%;
+  transform: translate(-50%, 0);
+  z-index: 99;
+  text-align: center;
+  font-size: 3.5rem;
+  color: rgb(229, 199, 244);
+  text-shadow: 2px 2px #8a2be2;
 }
 
 .funBox {
-    height:10%;
-    width:100%;
-    text-align: center;
-    font-size:40px;
-    color:aqua;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: aqua;
 
-    position:absolute;
-    top:50%;
-    left:0%;
-    z-index: 300;
-    transform: scale(2);
-    
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  z-index: 300;
+  transform: scale(2);
 }
 
-.active {
-    animation: reScaler 0.5s alternate 0s infinite;
+label {
+  font-size: 2rem;
+}
+/* input[type='radio'] {
+  border: 0px;
+  width: 100%;
+  height: 2em;
+} */
 
+.active {
+  animation: reScaler 0.5s alternate 0s infinite;
 }
 
 .activeText {
-    animation: shaker 1s linear 0s infinite;
+  animation: shaker 1s linear 0s infinite;
 }
 
 .animalImage {
-    height: 25%;
-    width: 25%;
-    position:absolute;
+  height: 25%;
+  width: 25%;
+  position: absolute;
+}
+
+#audioControls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imgBtn {
+  position: absolute;
+  width: 150px;
+}
+
+.imgBtn:hover {
+  opacity: 0.8;
+}
+
+.imgBtn:nth-child(1) {
+  left: 5%;
+  animation: falling 15s ease-in infinite;
+  animation-delay: -7s;
+}
+.imgBtn:nth-child(2) {
+  left: 80%;
+  animation: falling 20s cubic-bezier(0.72, 0.21, 0.33, 0.87) infinite;
+  animation-delay: -5s;
+}
+.imgBtn:nth-child(3) {
+  left: 45%;
+  animation: falling 20s linear infinite;
+  animation-delay: 0s;
+}
+.imgBtn:nth-child(4) {
+  left: 30%;
+  animation: falling 15s cubic-bezier(0.21, 0.81, 0.96, 0.45) infinite;
+  animation-delay: -5s;
+}
+.imgBtn:nth-child(5) {
+  left: 90%;
+  animation: falling 18s linear infinite;
+  animation-delay: -10s;
+}
+.imgBtn:nth-child(6) {
+  left: 65%;
+  animation: falling 10s linear infinite;
+}
+.imgBtn:nth-child(7) {
+  left: 15%;
+  animation: falling 14s ease-in-out infinite;
+}
+
+#sharkImage {
+    height: 400px;
 }
 
 /*_______________________ANIMATIONS______________________*/
 
 @keyframes reScaler {
-    from {
-        transform:scale(2);
-    }    
-    to {
-        transform: scale(5);
-    }
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(5);
+  }
 }
 
 @keyframes shaker {
-    0% {
-        transform:rotate(30deg);
-    }
+  0% {
+    transform: rotate(30deg);
+  }
 
-    50% {
-        transform:rotate(-30deg);
-    }
+  50% {
+    transform: rotate(-30deg);
+  }
 
-    100% {
-        transform:rotate(30deg);
-    }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes falling {
+  0% {
+    opacity: 0;
+    top: -10%;
+    -webkit-transform: translateX(20px) rotate(0deg) scale(1);
+    transform: translateX(20px) rotate(0deg) scale(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translateX(-20px) rotate(45deg) scale(2);
+    transform: translateX(-20px) rotate(45deg) scale(2);
+  }
+  40% {
+    -webkit-transform: translateX(-20px) rotate(700deg) scale(1.3);
+    transform: translateX(-20px) rotate(700deg) scale(1.3);
+  }
+  60% {
+    -webkit-transform: translateX(20px) rotate(90deg) scale(1.7);
+    transform: translateX(20px) rotate(90deg) scale(1.7);
+  }
+  80% {
+    -webkit-transform: translateX(-20px) rotate(225deg) scale(1);
+    transform: translateX(-20px) rotate(225deg) scale(1);
+  }
+  100% {
+    top: 110%;
+    -webkit-transform: translateX(-20px) rotate(360deg) scale(1.2);
+    transform: translateX(-20px) rotate(360deg) scale(1.2);
+  }
 }
