@@ -28,17 +28,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+//GET SCORE FROM URL
 var url = window.location.href;
 var url2 = url.split("?");
 var url3 = url2[1].split("=");
 var score = url3[1];
 
+//WRITE OUT YOUR CURRENT SCORE
 document.getElementById("scoreP").innerHTML = "YOUR SCORE IS: " + score;
 
 //ADD TO FIREBASE
 async function postScore() {
     var name = readInput("name");
     if(!score) return null;
+        //PUT IN THE SCORE/NAME TO FIREBASE
         try {
             const docRef = await addDoc(collection(db, "score"), {
                 score: score,
@@ -49,7 +52,7 @@ async function postScore() {
         } catch (e) {
             console.error("Error adding document: ", e);
         }
-
+    //REMOVE THE INPUT AND BUTTON ONCE YOU HAVE SUBMITTED SCORE
     $("#name").remove();
     $("#postBtn").remove();
     displayScore();
@@ -57,18 +60,19 @@ async function postScore() {
 
 //GRAB SCORE SAVED INSIDE FIREBASE
 async function getScore() {
+    //GET THE "SCORE-LIST" FROM FIREBASE
     const score = await getDocs(collection(db, "score"));
     return score;
 }
 
 //WRITE OUT SCORE SAVED IN FIREBASE
 async function displayScore(id) {
-    //GRAB SCORE
+    //CLEAR SCOREBOX BEFORE ADDING CONTENT
     document.getElementById("scoreBox").innerHTML = "";
     var scoreDb = await getScore();
     console.log("this is scoredb: " + scoreDb)
     
-    
+    //CREATE ARRAY THAT SAVES THE VALUES FROM FIREBASE
     var arraySaveScore = [];
     var runArray = 0;
 
@@ -78,6 +82,7 @@ async function displayScore(id) {
         runArray++;
     })
 
+    //POST SCORE IN X BOX WITH THE Y ARRAY HOLDING THE VALUES
     addToElement('scoreBox', arraySaveScore);
     console.log(arraySaveScore)
 
@@ -120,10 +125,25 @@ async function displayScore(id) {
 
 //ADD EVENTLISTENER FOR BUTTONS
 function addEventListener(){
+    //ADD EVENT LISTENER TO THE POST BUTTON
     var postBtn = document.getElementById("postBtn");
     if(!postBtn) return null;
     postBtn.removeEventListener("click", postScore);
     postBtn.addEventListener("click", postScore);
+
+    //ADD EVENT LISTENER FOR THE "BACK TO GAME" TEXT
+    var BTGbtn = document.getElementById("BTG");
+    if(!BTGbtn) return null;
+    BTGbtn.removeEventListener("click", goBackToGame);
+    BTGbtn.addEventListener("click", goBackToGame);
+
+
+
+}
+
+//GO BACK TO THE QUIZ
+function goBackToGame() {
+    window.location.href = "../index.html"
 }
 
 //INITIALIZE

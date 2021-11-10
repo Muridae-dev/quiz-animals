@@ -30,6 +30,16 @@ input {
     font-size:40px;
 }
 
+#BTG {
+    height:10%;
+    width:100%;
+    text-align: center;
+
+    position:relative;
+    top:20%;
+    font-size:30px;
+}
+
 #scoreBox {
     position:relative;
     top:50%;
