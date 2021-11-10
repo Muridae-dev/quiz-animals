@@ -5,6 +5,7 @@ var containerBox;
 var textBox;
 var audio;
 
+
 function randomInit() {
   textBoxManipulatorRemover();
   randomQuestion = Math.floor(Math.random() * 6);
@@ -15,15 +16,7 @@ function randomInit() {
   else if (randomQuestion == 4 && silhouetteQuestions.length != 0)
     initSilhouette();
   else if (randomQuestion == 5 && ghibliSound.length != 3) initGhibli();
-  else if (
-    pictureArray.length == 0 &&
-    quiz.length == 0 &&
-    makeGlasses.length == 0 &&
-    noMoreThan5 >= 5 &&
-    silhouetteQuestions.length == 0 &&
-    ghibliSound.length == 3
-  )
-    init();
+  else if (pictureArray.length == 0 && quiz.length == 0 && makeGlasses.length == 0 && noMoreThan5 >= 5 && silhouetteQuestions.length == 0 && ghibliSound.length == 3) window.location.href = "highscorepage/index.html?score=" + score;
   else {
     randomInit();
   }
