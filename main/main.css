@@ -183,7 +183,7 @@ label {
     transform: translateX(-20px) rotate(360deg) scale(1.2);
   }
 }
-
+/*
 button {
   color: #fff;
   font-family: Helvetica, sans-serif;
@@ -207,7 +207,7 @@ button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-}
+} */
 
 /* button:active {
   top: 10px;
