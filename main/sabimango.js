@@ -14,7 +14,7 @@ var quiz = [
     nrQ: 3,
   },
   {
-    fraga: "Which is the best designer?",
+    fraga: "Which is the best designer brand?",
     img: "<img src='images/fashion.png'>",
     svar: ["Prada", "Gucci", "Louis Vuitton"],
     answer: "k1",
