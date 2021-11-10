@@ -28,6 +28,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+var url = window.location.href;
+var url2 = url.split("?");
+var url3 = url2[1].split("=");
+var score = url3[1];
+
 //ADD TO FIREBASE
 async function postScore() {
     var name = readInput("name");
@@ -42,6 +47,7 @@ async function postScore() {
         } catch (e) {
             console.error("Error adding document: ", e);
         }
+    
 }
 
 //GRAB SCORE SAVED INSIDE FIREBASE
@@ -64,8 +70,9 @@ async function displayScore(id) {
     scoreDb.forEach((doc) => {
         arraySaveScore[runArray] = { score: doc.data().score, name: doc.data().name}
         runArray++;
-        addToElement('scoreBox', arraySaveScore);
     })
+
+    addToElement('scoreBox', arraySaveScore);
     console.log(arraySaveScore)
 
     return;
@@ -92,9 +99,14 @@ async function displayScore(id) {
 
     //ADD SCORE TO THE ELEMENT
     function addToElement(ele, arraySaveScore) {
-        arraySaveScore.sort();
+        arraySaveScore.sort(function(a,b) {
+            return parseFloat(a.score) - parseFloat(b.score);
+        });
+        arraySaveScore.reverse();
         if(!document.getElementById(ele)) return null;
+        console.log(arraySaveScore);
         arraySaveScore.forEach(item => document.getElementById(ele).innerHTML += formatListItem(item))
+        
     }
 
 //_______________________END_______________________
@@ -109,8 +121,8 @@ function addEventListener(){
 
 //INITIALIZE
 async function init(){
-    containerBox.innerHTML = '        <input type="text" id="name">        <button id="postBtn">POST</button>        <div id="scoreBox"></div>';
     await displayScore('scoreBox');
     addEventListener();
 }
 
+init();
