@@ -83,7 +83,6 @@ label {
   transform: translate(-50%, -50%);
 }
 
-
 .imgBtn {
   position: absolute;
   width: 150px;
@@ -126,9 +125,13 @@ label {
   left: 15%;
   animation: falling 14s ease-in-out infinite;
 }
+.imgBtn:nth-child(8) {
+  left: 15%;
+  animation: falling 14s ease-in-out infinite;
+}
 
 #sharkImage {
-    height: 400px;
+  height: 400px;
 }
 
 /*_______________________ANIMATIONS______________________*/
