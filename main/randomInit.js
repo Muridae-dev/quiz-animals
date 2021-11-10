@@ -7,12 +7,12 @@ var audio;
 
 function randomInit() {
   textBoxManipulatorRemover();
-  randomQuestion = 4; //Math.floor(Math.random() * 6);
+  randomQuestion = Math.floor(Math.random() * 6);
   if (randomQuestion == 0 && pictureArray.length != 0) initDragnDrop();
   else if (randomQuestion == 1 && quiz.length != 0) initSabimango();
   else if (randomQuestion == 2 && makeGlasses.length != 0) initDressup();
   else if (randomQuestion == 3 && noMoreThan5 < 5) initAnimals();
-  else if (randomQuestion == 4 && silhouetteQuestions.length != 0)
+  else if (randomQuestion == 4 && silhouetteQuestions.length != 4)
     initSilhouette();
   else if (randomQuestion == 5 && ghibliSound.length != 3) initGhibli();
   else if (
