@@ -34,7 +34,7 @@ body {
   transform: translate(-50%, 0);
   z-index: 99;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   color: rgb(229, 199, 244);
   text-shadow: 2px 2px #8a2be2;
 }
