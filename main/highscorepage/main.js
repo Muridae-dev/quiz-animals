@@ -49,7 +49,10 @@ async function postScore() {
         } catch (e) {
             console.error("Error adding document: ", e);
         }
-    
+
+    $("#name").remove();
+    $("#postBtn").remove();
+    displayScore();
 }
 
 //GRAB SCORE SAVED INSIDE FIREBASE
@@ -61,6 +64,7 @@ async function getScore() {
 //WRITE OUT SCORE SAVED IN FIREBASE
 async function displayScore(id) {
     //GRAB SCORE
+    document.getElementById("scoreBox").innerHTML = "";
     var scoreDb = await getScore();
     console.log("this is scoredb: " + scoreDb)
     
@@ -94,9 +98,9 @@ async function displayScore(id) {
     }
 
     //CREATE HTML ELEMENTS TO WRITE OUT ITEMS GRABBED FROM FIREBASE
-    function formatListItem(item) {
+    function formatListItem(item, i) {
         console.log("this is item" + item);
-        return `${item.score} -- ${item.name} <br/>`
+        return `#${i} - ${item.score} -- ${item.name} <br/>`
     }
 
     //ADD SCORE TO THE ELEMENT
@@ -107,7 +111,8 @@ async function displayScore(id) {
         arraySaveScore.reverse();
         if(!document.getElementById(ele)) return null;
         console.log(arraySaveScore);
-        arraySaveScore.forEach(item => document.getElementById(ele).innerHTML += formatListItem(item))
+        var i = 1;
+        arraySaveScore.forEach(item => {document.getElementById(ele).innerHTML += formatListItem(item, i); i++;})
         
     }
 
