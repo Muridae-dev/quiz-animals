@@ -16,7 +16,7 @@ var quiz = [
     nrQ: 3,
   },
   {
-    fraga: "Which is the best designer?",
+    fraga: "Which is the best designer brand?",
     img: "<img src='images/fashion.png'>",
     svar: ["Prada", "Gucci", "Louis Vuitton"],
     answer: "k1",
@@ -90,7 +90,7 @@ function changeQuestion() {
   var rectBox = textBox.getBoundingClientRect();
   var questionBox = document.getElementById('question');
   console.log(rectBox.height);
-  questionBox.style.top = rectBox.bottom + 50 + 'px';
+  questionBox.style.top = rectBox.bottom + 'px';
   questionBox.style.left = rectBox.left + rectBox.width / 2 + 'px';
 }
 

@@ -1,4 +1,3 @@
-
 let score = 0;
 let currentQuiz = 0;
 
@@ -36,11 +35,27 @@ const silhouetteQuestions = [
   },
   {
     id: 2,
-    question: 'Who has a name which is a type of topping you put in ramen?',
+    question: 'Who has a name which is a type of ramen toppings?',
   },
   {
     id: 3,
     question: 'Who fights against titans?',
+  },
+  {
+    id: 0,
+    question: 'Which is Luke?',
+  },
+  {
+    id: 1,
+    question: 'Which is a substitute Shinigami?',
+  },
+  {
+    id: 2,
+    question: 'He is a ninja',
+  },
+  {
+    id: 3,
+    question: 'His last name is ACKERMAN.',
   },
 ];
 

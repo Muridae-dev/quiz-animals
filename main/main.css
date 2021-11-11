@@ -27,14 +27,14 @@ body {
 
 #textBox {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
   height: auto;
-  width: 40%;
+  width: 100%;
   transform: translate(-50%, 0);
   z-index: 99;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   color: rgb(229, 199, 244);
   text-shadow: 2px 2px #8a2be2;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 label {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 /* input[type='radio'] {
   border: 0px;
@@ -125,9 +125,13 @@ label {
   left: 15%;
   animation: falling 14s ease-in-out infinite;
 }
+.imgBtn:nth-child(8) {
+  left: 15%;
+  animation: falling 14s ease-in-out infinite;
+}
 
 #sharkImage {
-    height: 400px;
+  height: 400px;
 }
 
 /*_______________________ANIMATIONS______________________*/
